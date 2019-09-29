@@ -1,11 +1,25 @@
 
 // buttons need to be displayed
-// when button is clicked, gifs need to be shown with rating from giphy.
+// when button is clicked, gifs need to be shown from the giphy API site.
+// Need to display 10 GIFS
+// 
 // when gifs are clicked, they need to move
 // need to show rating
 
 var topics = ["The Good Place", "Friends", "Criminal Minds", "Nikita", "New Girl", "Psych", "Revenge"
 ]
+
+
+
+
+
+
+
+
+
+
+
+
 
 function displayButtons () {
     // make sure to empty - it will prevent the buttons from adding again
@@ -19,17 +33,9 @@ function displayButtons () {
         button.text(topics[i]);
         $("#button-list").append(button)
 
-
-
     }
 
-
 }
-
-
-displayButtons ()
-
-
 
 
 // input button
@@ -41,5 +47,13 @@ displayButtons ()
 $("#search-item").on("click", function(event) {
     event.preventDefault();
 
+    var search = $("#search-input").val().trim();
+
+    topics.push(search);
+
+    displayButtons ()
+
 
 });
+
+displayButtons ()

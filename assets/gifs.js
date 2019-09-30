@@ -14,6 +14,8 @@ var topics = ["The Good Place", "Friends", "Criminal Minds", "Nikita", "New Girl
 
 function displayGifs() {
 
+
+
     var tvShow = $(this).attr('data-name');
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + tvShow + "&api_key=bZm4DU6X76X0Tjqh0bfKJZSvq5yVwj3R&limit=10";
@@ -25,17 +27,34 @@ function displayGifs() {
         method: "GET"
     }).then(function (response) {
 
+        // $('#gif-list').empty();
+
             console.log(response)
 
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
 
+                var div = $("<div class='tv'>");
+
                 var rating = response.rating;
 
                 var p = $("<p>").text("Rating: " + rating);
 
                 var images = $("<img>");
+
+                images.attr("src", results[i].images.fixed_height_still.url);
+                images.attr("still", results[i].images.fixed_height_still.url);
+                images.attr("animate", results[i].images.fixed_height.url);
+                images.attr("state", "still");
+                images.attr("class", "movement");
+                
+
+                div.append(p);
+                div.append(images);
+
+                $("#gif-list").prepend(div)
+
 
 
             }
@@ -53,8 +72,7 @@ function displayGifs() {
 
 
 
-displayGifs()
-
+// displayGifs()
 
 
 

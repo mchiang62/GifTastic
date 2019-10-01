@@ -1,4 +1,20 @@
 body {
-    margin-top: 25px;
+    margin-top: 20px;
+
+    background-image: url('https://freerangestock.com/sample/53277/bubbles-background-means-text-space-and-abstract.jpg');
+
+    background-attachment: fixed;
+
+}
+
+#search-form {
+    margin-top: 50px;
+}
+
+h1,
+label,
+p {
+    color: lightsteelblue;
+    font-family: 'Anton', sans-serif;
 
 }

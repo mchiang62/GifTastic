@@ -25,34 +25,37 @@
 
 <body>
 
-<div class="container">
-<h1>Favorite TV Shows</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Favorite TV Shows</h1>
 
-<div id="button-list"></div>
-<br>
+                <div id="button-list"></div>
+                <br>
 
-<div id="gif-list"></div>
+                <div id="gif-list"></div>
+            </div>
 
-</div>
+            <div class="col-md-4">
 
-<form id="search-form">
+                <form id="search-form">
 
-        <label for="search-input">Search for a favorite</label>
-        <br>
-        <input type="text" id="search-input" placeholder="type here">
-        <br><br>
-  
-        <!-- This button will trigger our AJAX call -->
-        <input id="search-item" class= "btn btn-info" type="submit" value="Find">
-     
-    </form>
+                    <label for="search-input">Find your favorite show!</label>
+                    <br>
+                    <input type="text" id="search-input" placeholder="search here">
+                    <br><br>
 
+                    <!-- This button will trigger our AJAX call -->
+                    <input id="search-item" class="btn btn-info" type="submit" value="Find">
 
+                </form>
 
+            </div>
+        </div>
+    </div>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="assets/gifs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/gifs.js"></script>
 
 
 </body>

@@ -1,11 +1,10 @@
 // buttons need to be displayed
 // when button is clicked, gifs need to be shown from the giphy API site.
 // Need to display 10 GIFS
-// 
 // when gifs are clicked, they need to move
 // need to show rating
 
-var topics = ["The Good Place", "Friends", "Criminal Minds", "Nikita", "New Girl", "Psych", "Revenge"]
+var topics = ["The Good Place", "Friends", "Criminal Minds", "The Office", "New Girl", "Psych"]
 
 
 // var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=bZm4DU6X76X0Tjqh0bfKJZSvq5yVwj3R&limit=10");
@@ -93,6 +92,8 @@ function displayButtons() {
 // queryURL
 // need to make sure when button is clicked, buttons are added to HTML
 
+
+
 $("#search-item").on("click", function (event) {
     event.preventDefault();
 
@@ -104,6 +105,24 @@ $("#search-item").on("click", function (event) {
 
 
 });
+
+
+$("#gif-list").on("click", '.movement', function() {
+  
+
+    var state = $(this).attr("state");
+    
+
+    if (state === "still") {
+      $(this).attr("src", $(this).attr("animate"));
+      $(this).attr("state", "animate");
+    } else {
+      $(this).attr("src", $(this).attr("still"));
+      $(this).attr("state", "still");
+    }
+  });
+
+
 
 
 $(document).on('click', '.tvShow', displayGifs);

@@ -13,21 +13,21 @@ var topics = ["The Good Place", "Friends", "Criminal Minds", "Nikita", "New Girl
 
 
 function displayGifs() {
+    event.preventDefault()
 
-
-
+    $("#gif-list").empty()
     var tvShow = $(this).attr('data-name');
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + tvShow + "&api_key=bZm4DU6X76X0Tjqh0bfKJZSvq5yVwj3R&limit=10";
 
     console.log(queryURL);
+    console.log("hi"+tvShow)
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
 
-        // $('#gif-list').empty();
 
             console.log(response)
 
@@ -37,9 +37,7 @@ function displayGifs() {
 
                 var div = $("<div class='tv'>");
 
-                var rating = response.rating;
-
-                var p = $("<p>").text("Rating: " + rating);
+                var p = $("<p>").text("Rating: " + results[i].rating);
 
                 var images = $("<img>");
 
@@ -59,12 +57,7 @@ function displayGifs() {
 
             }
 
-
-
-
-
         }
-
 
 
     )
@@ -85,7 +78,7 @@ function displayButtons() {
 
         var button = $("<button>");
         button.addClass("tvShow");
-        button.attr("data", topics[i]);
+        button.attr("data-name", topics[i]);
         button.text(topics[i]);
         $("#button-list").append(button)
 
